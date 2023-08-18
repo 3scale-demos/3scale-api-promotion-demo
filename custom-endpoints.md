@@ -4,12 +4,14 @@ The sandbox and production base URLs are defined as part of the proxy configurat
 
 The command syntax is `3scale proxy update <remote> <service-name|id> [-p param=value]`
 
+Multiple parameters can be passed as separate -p arguments in the same command.
+
 There are many parameters of the proxy which can be updated by this command, however the two we need to focus on are `endpoint` for the production public base url, and `sandbox_endpoint` for the sandbox public base url. The default naming scheme is "`https://<system-name>-<tenant>-apicast-<environment>.<wildcard-domain>:443`"
 
-So in our case to update the public base URLs of the API product we have freshly imported we would execute a command similar to this.
+So in our case to update the public base URLs of the API product we have freshly imported we would execute a command similar to this, which omits the `<tenant>-apicast` from the production public base url.
 
 ~~~
-$ toolbox 3scale proxy update $SOURCE 3 -p endpoint=https://weather-alerts-production.apps.uscell.lab.upshift.rdu2.redhat.com:443
+$ toolbox 3scale proxy update $SOURCE weather-alerts -p endpoint=https://weather-alerts-production.apps.uscell.lab.upshift.rdu2.redhat.com:443
 {
   "service_id": 3,
   "endpoint": "https://weather-alerts-production.apps.uscell.lab.upshift.rdu2.redhat.com:443",
@@ -91,3 +93,8 @@ $ toolbox 3scale proxy update $SOURCE 3 -p endpoint=https://weather-alerts-produ
 ~~~
 
 The output of this command will be the resulting proxy configuration after the changes made by the `3scale proxy update` command, so we can verify the change.
+
+Other possible parameters that can be overridden can be found by inspecting the built-in API docs in the gateway at the URL
+https://<tenant>-admin.<wildcard-domain>/p/admin/api_docs
+
+Search for 'Proxy Update' to see the list of parameters available.
