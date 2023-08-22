@@ -57,3 +57,7 @@ $ toolbox 3scale product import -f weather-alerts.yaml $DEST
 If you have imported a brand new API Product you will not be able to test with it immediately because there will be no subscribed applications. After creating a testing application you can promote the Product to the sandbox, and then publish it to the gateway.
 
 Refer back to the [3scale-toolbox-demo](https://github.com/3scale-demos/3scale-toolbox-demo/) for more information on that.
+
+## Next Steps
+
+Review the [Direct Migration](direct-migration.md) approach.

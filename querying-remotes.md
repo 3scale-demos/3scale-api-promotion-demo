@@ -39,5 +39,3 @@ Very useful information can be found here, such as the Product administrator's e
 ## Next Steps
 
 Review the indirect migration approach by [Exporting and Importing](export-import.md) using the toolbox.
-
-Review the [Direct Migration](direct-migration.md) approach.
