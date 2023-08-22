@@ -29,4 +29,4 @@ The command copies the complete API product from one system diretly to another w
 
 ## Next Steps
 
-If you customarily edit the lublic base urls for your API Product review how to set [Custom Endpoints](custome-endpoints.md) for more information. 
+If you customarily edit the lublic base urls for your API Product review how to set [Custom Endpoints](custom-endpoints.md) for more information. 
