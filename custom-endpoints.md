@@ -11,10 +11,10 @@ There are many parameters of the proxy which can be updated by this command, how
 So in our case to update the public base URLs of the API product we have freshly imported we would execute a command similar to this, which omits the `<tenant>-apicast` from the production public base url.
 
 ~~~
-$ toolbox 3scale proxy update $SOURCE weather-alerts -p endpoint=https://weather-alerts-production.apps.uscell.lab.upshift.rdu2.redhat.com:443
+$ toolbox 3scale proxy update $SOURCE weather-alerts -p sandbox-endpoint=https://weather-alerts-staging.apps.domain.com:443 -p endpoint=https://weather-alerts.apps.domain.com:443
 {
   "service_id": 3,
-  "endpoint": "https://weather-alerts-production.apps.uscell.lab.upshift.rdu2.redhat.com:443",
+  "endpoint": "https://weather-alerts.apps.domain.com:443",
   "api_backend": "https://api.weather.gov:443",
   "credentials_location": "query",
   "auth_app_key": "app_key",
@@ -34,7 +34,7 @@ $ toolbox 3scale proxy update $SOURCE weather-alerts -p endpoint=https://weather
   "error_headers_limits_exceeded": "text/plain; charset=us-ascii",
   "secret_token": "Shared_secret_sent_from_proxy_to_API_backend_7d210c57227f993a",
   "hostname_rewrite": "",
-  "sandbox_endpoint": "https://weather-alerts-3scale-apicast-staging.apps.uscell.lab.upshift.rdu2.redhat.com:443",
+  "sandbox_endpoint": "https://weather-alerts-staging.apps.domain.com:443",
   "api_test_path": "/",
   "policies_config": [
     {
@@ -95,6 +95,6 @@ $ toolbox 3scale proxy update $SOURCE weather-alerts -p endpoint=https://weather
 The output of this command will be the resulting proxy configuration after the changes made by the `3scale proxy update` command, so we can verify the change.
 
 Other possible parameters that can be overridden can be found by inspecting the built-in API docs in the gateway at the URL
-https://<tenant>-admin.<wildcard-domain>/p/admin/api_docs
+`https://<tenant>-admin.<wildcard-domain>/p/admin/api_docs``
 
 Search for 'Proxy Update' to see the list of parameters available.
