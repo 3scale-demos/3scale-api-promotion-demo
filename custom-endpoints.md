@@ -95,6 +95,6 @@ $ toolbox 3scale proxy update $SOURCE weather-alerts -p sandbox-endpoint=https:/
 The output of this command will be the resulting proxy configuration after the changes made by the `3scale proxy update` command, so we can verify the change.
 
 Other possible parameters that can be overridden can be found by inspecting the built-in API docs in the gateway at the URL
-`https://<tenant>-admin.<wildcard-domain>/p/admin/api_docs``
+`https://<tenant>-admin.<wildcard-domain>/p/admin/api_docs`
 
 Search for 'Proxy Update' to see the list of parameters available.
