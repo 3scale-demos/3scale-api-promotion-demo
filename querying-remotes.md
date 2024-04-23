@@ -31,7 +31,7 @@ The syntax for the command is `3scale service show <remote> <system_name|service
 ~~~
 $ toolbox 3scale service show $SOURCE weather-alerts
 ID	NAME	STATE	SYSTEM_NAME	BACKEND_VERSION	DEPLOYMENT_OPTION	SUPPORT_EMAIL	DESCRIPTION	CREATED_AT	UPDATED_AT
-3	Weather Alerts API	incomplete	weather-alerts	1	hosted	admin@3scale.apps.uscell.lab.upshift.rdu2.redhat.com	Get state-level weather alerts	2023-08-16T19:57:01Z	2023-08-17T15:11:38Z
+3	Weather Alerts API	incomplete	weather-alerts	1	hosted	admin@3scale.apps.phagerma.lab.upshift.rdu2.redhat.com	Get state-level weather alerts	2023-08-16T19:57:01Z	2023-08-17T15:11:38Z
 ~~~
 
 Very useful information can be found here, such as the Product administrator's email address, and created / updated times. This information can also be used to make alterations to the API Product right from the command line using the 3scale toolbox, however that is out of the scope of this demo.
