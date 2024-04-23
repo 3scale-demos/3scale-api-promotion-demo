@@ -36,12 +36,12 @@ Create personal access tokens and set an environment variable for ease of use wi
     1. Save this value somewhere safe, it will only be displayed this one time
 1. On your server create an environment variable called SOURCE
     ~~~
-    export SOURCE="https://<TOKEN>@3scale-admin.<WILDCARD_DOMAIN>"
+    export SOURCE="https://<TOKEN>@<TENANT>-admin.<WILDCARD_DOMAIN>"
     ~~~
 1. Repeate Steps 1-3 on the destination 3scale instance
 1. Create a second environment variable called DEST
     ~~~
-    export DEST="https://<TOKEN>@3scale-admin.<WILDCARD_DOMAIN>"
+    export DEST="https://<TOKEN>@<TENANT>-admin.<WILDCARD_DOMAIN>"
     ~~~
 
 ## Alias the toolbox command

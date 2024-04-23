@@ -11,8 +11,8 @@ There are many parameters of the proxy which can be updated by this command, how
 So in our case to update the public base URLs of the API product we have freshly imported we would execute a command similar to this, which omits the `<tenant>-apicast` from the production public base url.
 
 ~~~
-$ toolbox 3scale proxy update $SOURCE weather-alerts \
-> -p sandbox-endpoint=https://weather-alerts-staging.apps.domain.com:443 \
+$ toolbox 3scale proxy update $DEST weather-alerts \
+> -p sandbox_endpoint=https://weather-alerts-staging.apps.domain.com:443 \
 > -p endpoint=https://weather-alerts.apps.domain.com:443
 {
   "service_id": 3,
@@ -39,15 +39,6 @@ $ toolbox 3scale proxy update $SOURCE weather-alerts \
   "sandbox_endpoint": "https://weather-alerts-staging.apps.domain.com:443",
   "api_test_path": "/",
   "policies_config": [
-    {
-      "name": "default_credentials",
-      "version": "builtin",
-      "configuration": {
-        "auth_type": "user_key",
-        "user_key": "1234567890"
-      },
-      "enabled": false
-    },
     {
       "name": "apicast",
       "version": "builtin",

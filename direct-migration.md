@@ -7,7 +7,7 @@ The syntax of the command is `3scale service copy [opts] -s <source-remote> -d <
 The system name the product is imported to can be overridden using the option `-t=<value>` if desired.
 
 ~~~
-$ toolbox 3scale service copy -s  $SOURCE -d $DEST weather-alerts -k
+$ toolbox 3scale service copy -t weather-alerts -s $SOURCE -d $DEST weather-alerts -k
 new service id 2555418003667
 updated proxy of 2555418003667 to match the original
 original service hits metric 8 has 2 methods
@@ -27,6 +27,24 @@ created 2 mapping rules
 
 The command copies the complete API product from one system diretly to another without needing to save and transport an export file. It will output the results of the action for review.
 
+# Creating the application
+
+The `3scale service copy` command will create any missing application plans, but will not create applications because they belong to organizations and are managed separately from the API Product. You can use the toolbox to create the application when necessary with the following command:
+
+~~~
+$ toolbox 3scale application apply --account=john --name="Weather Alerts Application" --description="Created from the CLI" --plan=weather-plan --service=weather-alerts $DEST 1234567890
+~~~
+
+The alternative would be create the developer application from the admin console.
+
+# From Sandbox to Production
+
+When copying services between environments, the incoming version will not automatically be available at the live production URL, after testing the API Product in using the staging sandbox URL you can promote it to be available at the production baseurl.
+
+~~~
+$ toolbox 3scale proxy-config promote $DEST weather-alerts -k
+~~~
+
 ## Next Steps
 
-If you customarily edit the lublic base urls for your API Product review how to set [Custom Endpoints](custom-endpoints.md) for more information. 
+If you customarily edit the public base urls for your API Product review how to set [Custom Endpoints](custom-endpoints.md) for more information. 
